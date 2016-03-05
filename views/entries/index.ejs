@@ -1,6 +1,10 @@
 <% include ../head %>
 
 <ul>
+  <li>
+    <a href='/entries/new' >Create New Entry</a>
+  </li>
+
 <% for(var i=0; i<entries.length; i++) { %>
  <li>
    <a href='/entries/<%= i %>' ><%= entries[i].slug %></a>
