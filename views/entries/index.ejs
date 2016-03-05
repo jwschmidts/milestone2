@@ -9,7 +9,7 @@
  <li>
    <a href='/entries/<%= i %>' ><%= entries[i].slug %></a> &mdash;
    <a href='/entries/<%= i %>/edit'>Edit</a> &mdash;
-   <a href='/entries/<%= i %>/delete'>Delete</a>
+   <a href='/entries/<%= i %>/delete' onclick='return confirm("Are you sure?")'>Delete</a>
  </li>
 <% } %>
 </ul>
