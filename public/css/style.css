@@ -1,1 +1,29 @@
+.navul {
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+	overflow: hidden;
+	background-color: grey;
+}
 
+.navli {
+	float: left;
+}
+
+.navli a {
+	display: block;
+	color: lightblue;
+	padding: 14px 16px;
+	text-decoration: none;
+}
+
+.navli a:hover:not(.active){
+	background-color: black;
+}
+.active {
+	background-color: #ACAF50;
+}
+
+h1 {
+	text-align:center;
+}
