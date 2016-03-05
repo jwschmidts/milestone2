@@ -7,8 +7,8 @@
 
 <% for(var i=0; i<entries.length; i++) { %>
  <li>
-   <a href='/entries/<%= i %>' ><%= entries[i].slug %></a>
-   <a href='/entries/<%= i %>/edit'>Edit</a>
+   <a href='/entries/<%= i %>' ><%= entries[i].slug %></a> &mdash;
+   <a href='/entries/<%= i %>/edit'>Edit</a> &mdash;
    <a href='/entries/<%= i %>/delete'>Delete</a>
  </li>
 <% } %>

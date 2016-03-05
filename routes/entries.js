@@ -2,8 +2,8 @@ var express = require('express');
 var router = express.Router();
 
 var entries = [
-  {slug:"how to pass class", body: "come to class. do your homework", created_at: "some date"},
-  {slug:"how to fail class", body: "play video games all day", created_at: "some date"}
+  {slug:"Nav Bar", body: "I have been very interested in Web Development for a while. While at work I do a little html coding, but most of it is for functional value and not for style. I use mostly other peoples css so I do not know it as much. I spent the time to learn how to make a nave bar that looks a little better than the basic list.", created_at: "02-10-2016"},
+  {slug:"xkill", body: "Today while working in my virtual machine that is running linux, a program stopped responding and I could not kill it. I was forced to find another way to do that. This was through xkill. You type that in the command line and it allows you to then click on the window that you would like to close and stops it. It seems to be like the task manager on a windows machine.", created_at: "02-10-2016"}
 ];
 
 /* READ all: GET entries listing. */
