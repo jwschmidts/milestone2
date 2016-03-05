@@ -52,7 +52,11 @@ router.get('/:id/delete', function(req, res, next) {
 /* THIS NEEDS TO BE LAST or /new goes here rather than where it should */
 /* READ one entry: GET /entries/0 */
 router.get('/:id', function(req, res, next) {
-  res.render('entries/entry', {title: "Today I learned", entry: entries[req.params.id]});
+  res.render('entries/entry',
+  {
+    title: "Today I learned",
+    entry: entries[req.params.id]
+  });
 });
 
 module.exports = router;
