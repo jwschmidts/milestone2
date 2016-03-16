@@ -6,7 +6,7 @@ var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 
 var routes = require('./routes/index');
-var entries = require('./routes/entries');
+var til = require('./routes/til');
 
 var app = express();
 
@@ -22,15 +22,17 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
-// var db-connection-string = "";
-// app.use(orm.express(string, {
-//     define: function (db, models, next) {
-//         next();
-//     }
-// }));
+var orm = require('orm');
+var dbstring = "postgres://cs2610:wc/fever29@localhost/TIL";
+var string = process.env.DATABASE_URL || dbstring;
+app.use(orm.express(string, {
+     define: function (db, models, next) {
+         next();
+     }
+ }));
 
 app.use('/', routes);
-app.use('/entries', entries);
+app.use('/til', til);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
