@@ -5,8 +5,9 @@ var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 
+
 var routes = require('./routes/index');
-var til = require('./routes/til');
+var entries = require('./routes/entries');
 
 var app = express();
 
@@ -22,14 +23,16 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
+
 var orm = require('orm');
-var dbstring = "postgres://cs2610:wc/fever29@localhost/TIL";
+
+var dbstring = "postgres://cs2610:wd1234@localhost/entries";
 var string = process.env.DATABASE_URL || dbstring;
 app.use(orm.express(string, {
-     define: function (db, models, next) {
-         next();
-     }
- }));
+    define: function (db, models, next) {
+        next();
+    }
+}));
 
 app.use('/', routes);
 app.use('/entries', entries);
