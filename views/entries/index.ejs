@@ -1,15 +1,12 @@
+
 <% include ../head %>
 
 <ul>
-  <li>
-    <a href='/entries/new' >Create New Entry</a>
-  </li>
-
 <% for(var i=0; i<entries.length; i++) { %>
  <li>
-   <a href='/entries/<%= i %>' ><%= entries[i].slug %></a> &mdash;
-   <a href='/entries/<%= i %>/edit'>Edit</a> &mdash;
-   <a href='/entries/<%= i %>/delete' onclick='return confirm("Are you sure?")'>Delete</a>
+   <a href='/entries/<%= entries[i].id %>' ><%= entries[i].slug %></a>
+   <a href='/entries/<%= entries[i].id %>/edit'>Edit</a>
+   <a href='/entries/<%= entries[i].id %>/delete'>Delete</a>
  </li>
 <% } %>
 </ul>

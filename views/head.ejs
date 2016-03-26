@@ -1,3 +1,4 @@
+<!-- HEAD.ejs -->
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -6,12 +7,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <title><%= title %></title>
-    <nav>
-				<ul class="navul">
-					<li class="navli"><a href='/entries'>Index</a></li>
-				</ul>
-    </nav>
+
     <link href="/css/bootstrap.min.css" rel="stylesheet">
     <link href="/css/style.css" rel="stylesheet">
   </head>
   <body>
+    <nav>
+      <ul>
+        <li>
+          <a href='/entries'>Entries</a>
+          <a href='/entries/new'>Create an Entry</a>
+        </li>
+      <ul>
+    </nav>

@@ -1,11 +1,11 @@
 <% include ../head %>
 
-<form action="/entries" method='POST'>
-  <label name="slug">Title</label>
+<form action="/entries/" method='POST'>
+  <label name="slug">Slug</label>
   <input type="text" name="slug">
   <br />
   <label name="body">Body</label>
-  <textarea rows="4" cols="50" name="body"></textarea>
+  <input type="text" name="body">
   <br />
   <input type="submit">
 </form>
