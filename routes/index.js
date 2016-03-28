@@ -4,7 +4,7 @@ var crypto = require('crypto');
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  res.render('index', { title: 'Today I Learned' });
+  res.render('login', { title: 'Today I Learned' });
 });
 
 router.get('/login', function(req, res, next) {
@@ -26,7 +26,11 @@ router.post('/login', function(req, res, next) {
       sha1sum.update(req.body.password);
       var hashed_input = sha1sum.digest('hex');
 
-      if(hashed_input === data[0].password) //DONT Do this is other projects!!!
+      if (!data[0])
+      {
+        res.redirect('/login');
+      }
+      else if(hashed_input === data[0].password) //DONT Do this is other projects!!!
       {
         res.cookie('username', data[0].name);
         res.redirect('/entries/');
